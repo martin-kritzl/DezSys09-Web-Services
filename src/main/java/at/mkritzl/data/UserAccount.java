@@ -1,6 +1,7 @@
 package at.mkritzl.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
@@ -13,12 +14,13 @@ import java.io.Serializable;
 public class UserAccount implements Serializable {
 
     @Id
-    @Size(max = 100)
+    @Size(max = 50)
     @NotNull
+    @Email
     private String email;
 
     @NotNull
-    @Size(max = 100)
+    @Size(min=5, max = 50)
     private String password;
 
     public UserAccount(@JsonProperty("email") String email, @JsonProperty("password") String password) {
