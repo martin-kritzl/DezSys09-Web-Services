@@ -9,6 +9,10 @@ public class Message {
         this.message = message;
     }
 
+    private Message() {
+
+    }
+
     public int getStatus() {
         return status;
     }
