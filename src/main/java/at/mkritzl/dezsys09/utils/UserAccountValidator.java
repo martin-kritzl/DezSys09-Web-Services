@@ -1,6 +1,6 @@
-package at.mkritzl.utils;
+package at.mkritzl.dezsys09.utils;
 
-import at.mkritzl.data.UserAccount;
+import at.mkritzl.dezsys09.data.UserAccount;
 
 public class UserAccountValidator {
 

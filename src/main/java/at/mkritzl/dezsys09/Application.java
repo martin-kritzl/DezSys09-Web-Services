@@ -1,4 +1,4 @@
-package at.mkritzl;
+package at.mkritzl.dezsys09;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

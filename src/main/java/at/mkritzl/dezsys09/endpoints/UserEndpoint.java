@@ -1,14 +1,12 @@
-package at.mkritzl.endpoints;
+package at.mkritzl.dezsys09.endpoints;
 
-import at.mkritzl.data.Message;
-import at.mkritzl.data.UserAccount;
-import at.mkritzl.persistent.UserRepository;
-import at.mkritzl.utils.UserAccountValidator;
+import at.mkritzl.dezsys09.data.Message;
+import at.mkritzl.dezsys09.data.UserAccount;
+import at.mkritzl.dezsys09.utils.UserAccountValidator;
+import at.mkritzl.dezsys09.persistent.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.inject.Named;
-import javax.validation.Valid;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

@@ -1,4 +1,4 @@
-package at.mkritzl.data;
+package at.mkritzl.dezsys09.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Email;

@@ -1,4 +1,4 @@
-package at.mkritzl.config;
+package at.mkritzl.dezsys09.config;
 
 import org.h2.server.web.WebServlet;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;

@@ -1,4 +1,4 @@
-package at.mkritzl.data;
+package at.mkritzl.dezsys09.data;
 
 public class Message {
     private int status;

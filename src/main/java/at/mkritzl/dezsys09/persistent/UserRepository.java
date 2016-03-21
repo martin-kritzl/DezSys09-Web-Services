@@ -1,6 +1,6 @@
-package at.mkritzl.persistent;
+package at.mkritzl.dezsys09.persistent;
 
-import at.mkritzl.data.UserAccount;
+import at.mkritzl.dezsys09.data.UserAccount;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<UserAccount, String> {

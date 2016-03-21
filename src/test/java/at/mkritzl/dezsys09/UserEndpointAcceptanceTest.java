@@ -1,7 +1,8 @@
-import at.mkritzl.Application;
-import at.mkritzl.data.Message;
-import at.mkritzl.data.UserAccount;
-import org.glassfish.jersey.message.internal.XmlCollectionJaxbProvider;
+package at.mkritzl.dezsys09;
+
+import at.mkritzl.dezsys09.Application;
+import at.mkritzl.dezsys09.data.Message;
+import at.mkritzl.dezsys09.data.UserAccount;
 import org.junit.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
