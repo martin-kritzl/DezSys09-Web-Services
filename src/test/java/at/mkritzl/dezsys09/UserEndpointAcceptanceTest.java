@@ -117,39 +117,39 @@ public class UserEndpointAcceptanceTest {
         UserAccount user1 = new UserAccount("max.mustermann9@beispiel.com", "12345");
         UserAccount user2 = new UserAccount("max.mustermann9@beispiel.com", null);
         restTemplate.postForEntity("http://127.0.0.1:8080/register", user1, Message.class);
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user2, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user2, Message.class);
     }
 
     @Test(expected=HttpClientErrorException.class)
     public void testLoginEmptyEmail() {
         UserAccount user = new UserAccount(null, "12345");
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user, Message.class);
     }
 
     @Test(expected=HttpClientErrorException.class)
     public void testLoginEmptyEmailAndPassword() {
         UserAccount user = new UserAccount(null, null);
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user, Message.class);
     }
 
     @Test(expected=HttpClientErrorException.class)
     public void testLoginInvalidEmail1() {
         UserAccount user = new UserAccount("noEmail", "12345");
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user, Message.class);
     }
 
     @Test(expected=HttpClientErrorException.class)
     public void testLoginInvalidEmail2() {
         UserAccount user = new UserAccount("", "12345");
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user, Message.class);
     }
 
     @Test(expected=HttpClientErrorException.class)
     public void testLoginInvalidPassword() {
         UserAccount user1 = new UserAccount("max.mustermann10@beispiel.com", "12345");
-        UserAccount user2 = new UserAccount("max.mustermann10@beispiel.com", "");
+        UserAccount user2 = new UserAccount("max.mustermann10@beispiel.com", "12345678");
         restTemplate.postForEntity("http://127.0.0.1:8080/register", user1, Message.class);
-        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/register", user2, Message.class);
+        ResponseEntity response = restTemplate.postForEntity("http://127.0.0.1:8080/login", user2, Message.class);
     }
 
 //    @Test

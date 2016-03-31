@@ -3,6 +3,7 @@ package at.mkritzl.dezsys09.config;
 import at.mkritzl.dezsys09.endpoints.UserEndpoint;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.ServerProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,6 +15,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JerseyConfiguration extends ResourceConfig {
     public JerseyConfiguration() {
+        this.property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
+        this.register(JacksonFeature.class);
         this.register(UserEndpoint.class);
     }
 }

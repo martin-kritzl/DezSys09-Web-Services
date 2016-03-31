@@ -7,6 +7,7 @@ import at.mkritzl.dezsys09.persistent.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.inject.Named;
+import javax.validation.Valid;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -35,7 +36,7 @@ public class UserEndpoint {
      */
     @POST
     @Path("/register")
-    public Response register(UserAccount requestAccount) {
+    public Response register(@Valid UserAccount requestAccount) {
         if (UserAccountValidator.hasData(requestAccount)) {
             //Alle Argumente vorhanden
             if (this.repository.findOne(requestAccount.getEmail()) == null) {
@@ -65,7 +66,7 @@ public class UserEndpoint {
      */
     @POST
     @Path("/login")
-    public Response login(UserAccount requestAccount) {
+    public Response login(@Valid UserAccount requestAccount) {
         if (UserAccountValidator.hasData(requestAccount)) {
             //Alle Argumente vorhanden
             UserAccount account = this.repository.findOne(requestAccount.getEmail());
