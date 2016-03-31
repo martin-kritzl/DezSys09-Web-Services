@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 public class JerseyConfiguration extends ResourceConfig {
     public JerseyConfiguration() {
         this.property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
-        this.register(JacksonFeature.class);
         this.register(UserEndpoint.class);
     }
 }
