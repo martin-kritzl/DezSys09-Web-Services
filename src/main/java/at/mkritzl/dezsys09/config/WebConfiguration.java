@@ -5,6 +5,12 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Diese Klasse ist fuer die Konfiguration des Webinterfaces fuer die h2-Datenbank zustaendig.
+ *
+ * @author Martin Kritzl
+ * @version 20160321
+ */
 @Configuration
 public class WebConfiguration {
     @Bean

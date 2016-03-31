@@ -13,11 +13,16 @@ import javax.ws.rs.core.Response;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by mkritzl on 18.03.2016.
+ * User Acceptance Tests des Rest-Services der Benutzerkonten.
+ *
+ * @author Martin Kritzl
+ * @version 20160331
  */
 public class UserEndpointAcceptanceTest {
 
     private RestTemplate restTemplate;
+    private static final String HOST = "127.0.0.1";
+    private static final String PORT = "8080";
 
     public UserEndpointAcceptanceTest() {
         this.restTemplate = new RestTemplate();
@@ -25,7 +30,7 @@ public class UserEndpointAcceptanceTest {
 
     @BeforeClass
     public static void setUp() {
-        String[] args = {"--spring.profiles.active=test"};
+        String[] args = {"--spring.profiles.active=test", "--server.port=" + PORT};
         Application.main(args);
     }
 

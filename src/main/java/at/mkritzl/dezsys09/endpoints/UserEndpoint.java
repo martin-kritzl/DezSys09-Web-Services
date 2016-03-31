@@ -13,6 +13,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * Rest-Endpoint fuer die Registrierung und den Login des Useraccounts
+ *
+ * @author Martin Kritzl
+ * @version 20160331
+ */
 @Path("/")
 @Produces({MediaType.APPLICATION_JSON})
 @Named
@@ -21,6 +27,12 @@ public class UserEndpoint {
     @Autowired
     private UserRepository repository;
 
+    /**
+     * Endpoint fuer die Registrierung des Useraccounts
+     *
+     * @param requestAccount Der Benutzer der registriert werden soll
+     * @return Eine HTTP-Response, die eine Aussage ueber die erfolgreiche Registrierung des Benutzers gibt
+     */
     @POST
     @Path("/register")
     public Response register(UserAccount requestAccount) {
@@ -45,6 +57,12 @@ public class UserEndpoint {
         }
     }
 
+    /**
+     * Endpoint fuer den Login eines Useraccounts
+     *
+     * @param requestAccount Der Benutzer der angemeldet werden soll
+     * @return Eine HTTP-Response, die eine Aussage ueber die erfolgreiche Anmeldung des Benutzers gibt
+     */
     @POST
     @Path("/login")
     public Response login(UserAccount requestAccount) {

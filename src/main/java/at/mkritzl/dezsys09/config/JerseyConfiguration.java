@@ -5,11 +5,15 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Diese Klasse registriert die erstellten Endpoints bei Jersey
+ *
+ * @author Martin Kritzl
+ * @version 20160321
+ */
 @Configuration
 public class JerseyConfiguration extends ResourceConfig {
-
     public JerseyConfiguration() {
         this.register(UserEndpoint.class);
-        this.register(JacksonFeature.class);
     }
 }
